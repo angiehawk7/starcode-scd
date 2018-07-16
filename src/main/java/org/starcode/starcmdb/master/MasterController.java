@@ -15,8 +15,6 @@ import org.starcode.starcmdb.master.service.TableOperService;
 @RestController
 @RequestMapping("/master")
 public class MasterController {
-    @Autowired
-    private TableOperService tblOperService;
     /**
      * 创建配置库
      *
@@ -24,7 +22,6 @@ public class MasterController {
      */
     @PostMapping("/cmdb")
     String createCmdb(CINameSpace nameSpace) {
-        tblOperService.createDB();
         return "ok";
     }
 
