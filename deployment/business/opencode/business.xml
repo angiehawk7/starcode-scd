@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<business>
+    <!--配置库名称-->
+    <namespace>opencode</namespace>
+    <!--配置库连接数上限-->
+    <access_limit>100</access_limit>
+    <!--配置库工作模式：single，master-standby-->
+    <work_mode>single</work_mode>
+    <!--配置库备份模式-->
+    <backup_mode>YES</backup_mode>
+    <!--配置库账号-->
+    <accounts>
+        <account>
+            <!--配置库账号-->
+            <owner>opencode</owner>
+            <!--配置库账号密码-->
+            <pwd>opencode</pwd>
+            <!--配置库账号权限-->
+            <auth></auth>
+        </account>
+    </accounts>
+    <!--包含的CI-->
+    <include_cis>
+        <ci>meta_ci_Project.xml</ci>
+    </include_cis>
+    <!--包含的link-->
+    <include_cis>
+        <ci>meta_link_Connect.xml</ci>
+        <ci>meta_link_Contain.xml</ci>
+        <ci>meta_link_In.xml</ci>
+        <ci>meta_link_Location.xml</ci>
+        <ci>meta_link_Run.xml</ci>
+        <ci>meta_link_Use.xml</ci>
+        <ci>meta_link_Install.xml</ci>
+    </include_cis>
+</business>

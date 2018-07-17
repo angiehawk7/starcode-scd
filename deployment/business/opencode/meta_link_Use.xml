@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<link ns="opencode">
+    <!--关系类型 使用与-->
+    <id>Use</id>
+    <!--显示名称-->
+    <name>${business.opencode.link.Use.name}</name>
+    <!--源CI-->
+    <s_ci></s_ci>
+    <!--目标CI-->
+    <d_ci></d_ci>
+    <!--关系属性-->
+    <attrs>
+        <attr>
+            <!--属性ID-->
+            <id></id>
+            <!--属性名称-->
+            <name></name>
+        </attr>
+    </attrs>
+</link>

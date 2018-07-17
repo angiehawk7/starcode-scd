@@ -1,5 +1,6 @@
 package org.starcode.starcmdb;
 
+import com.alibaba.fastjson.JSON;
 import org.apache.commons.io.FileUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,7 +22,6 @@ public class CmdbApplication {
     //TODO 启动参数获取应用运行根目录
     private static final String APP_ROOT="D:"+File.separator+"githubcode"+File.separator+"starcode-scd";
     public static void main(String[] args) throws Exception {
-        LOG.info("Begin start scd.......");
         //自定义程序配置项文件。
         StringBuilder sb=new StringBuilder();
         sb.append(APP_ROOT).append(File.separator).
@@ -34,6 +34,7 @@ public class CmdbApplication {
         SpringApplication app=new SpringApplication(CmdbApplication.class);
         app.setDefaultProperties(prop);
         app.run(args);
+        LOG.info("stared params is:{}", JSON.toJSONString(args));
         LOG.info("End start scd.......");
     }
 }

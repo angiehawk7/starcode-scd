@@ -11,7 +11,16 @@ package org.starcode.starcmdb.master.service;
  * 5：cmdb元数据表增删改查。
  */
 public class TableOperService {
-    public void createDB(){
+    private static final String CREATE_DB_SQL="create database school with owner=president template=template0 encoding='UTF8' lc_collate='C' lc_ctype='C' tablespace=tbs_test connection limit = 100;";
+
+    /**
+     * 创建数据库
+     * @param dbname
+     * @param limit
+     * @param space
+     * @param owner
+     */
+    public void createDB(String dbname,int limit,String space,String owner){
 
     }
 }

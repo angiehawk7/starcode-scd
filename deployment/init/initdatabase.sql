@@ -57,6 +57,34 @@ comment on column meta_ci_attr_value.attr is '属性';
 comment on column meta_ci_attr_value.k is '元数据K';
 comment on column meta_ci_attr_value.v is '元数据V';
 
---创建数据库账号表
-
---创建表空间
+--以下为每个配置库创建
+--创建关系类型表
+DROP TABLE IF EXISTS "common_relation";
+create table "common_relation"(
+"name" varchar(128) not null,
+"s_ci" varchar(128) not null,
+"d_ci" varchar(128) not null,
+"k" varchar(64) not null,
+"v" varchar(128) not null,
+constraint common_relation_pkey PRIMARY KEY (name,s_ci,d_ci,k)
+);
+comment on column common_relation.name is '关系名称';
+comment on column common_relation.s_ci is '源CI';
+comment on column common_relation.d_ci is '目标CI';
+comment on column common_relation.k is '关系属性';
+comment on column common_relation.v is '关系属性Value';
+--创建关系数据表
+DROP TABLE IF EXISTS "common_relation_d";
+create table "common_relation_d"(
+"name" varchar(128) not null,
+"s_ci" varchar(128) not null,
+"s_node" varchar(128) not null,
+"d_ci" varchar(128) not null,
+"d_node" varchar(128) not null,
+constraint common_relation_d_pkey PRIMARY KEY (name,s_ci,s_node,d_ci,d_node)
+);
+comment on column common_relation_d.name is '关系类型';
+comment on column common_relation_d.s_ci is '源CI';
+comment on column common_relation_d.d_ci is '目标CI';
+comment on column common_relation_d.s_node is '源节点';
+comment on column common_relation_d.d_node is '目标节点';
